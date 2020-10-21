@@ -10,13 +10,13 @@ router.route('/')
         //     res.render('ps3', { title2: 'HELLOOOO?' });
 
     .get((req, res, next) => {
-            console.log(`Got ${req.query.name} and ${req.query.age} on ${req.url} with (${req.method})`)
-            res.render('ps3', {'name': req.query.name, 'age': req.query.age,
-                    'getReq':true})
+            console.log(`Got ${req.query.name} on ${req.url} with (${req.method})`)
+            //res.render('ps3', {'string': 'Did this string show up?' });
+            res.render('ps3', {'name': req.query.name, 'getReq':true})
     })
     .post((req, res, next) => {
-            console.log(`Got ${req.body.name} and ${req.body.age} on ${req.url} with (${req.method})`)
-            res.render('ps3', {'name': req.body.name, 'age': req.body.age, 'length':req.body.name.length,
+            console.log(`Got ${req.body.name} on ${req.url} with (${req.method})`)
+            res.render('ps3', {'name': req.body.name, 'length': req.body.name.length,
                     'postReq': true})
     })
 
