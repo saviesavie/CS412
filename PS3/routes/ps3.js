@@ -11,8 +11,8 @@ router.route('/')
 
     .get((req, res, next) => {
             console.log(`Got ${req.query.name} and ${req.query.age} on ${req.url} with (${req.method})`)
-            res.render('ps3', {'name': req.query.age, 'age': req.query.time,
-                    getReq:true})
+            res.render('ps3', {'name': req.query.name, 'age': req.query.age,
+                    'getReq':true})
     })
     .post((req, res, next) => {
             console.log(`Got ${req.body.name} and ${req.body.age} on ${req.url} with (${req.method})`)
