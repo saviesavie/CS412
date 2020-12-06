@@ -1,0 +1,40 @@
+<!--NGFOR-->
+<div>
+  <ul *ngFor="let track of tracks">
+    <li (click)="setSelectedMusic(track)">{{track.trackName}}</li>
+  </ul>
+</div>
+
+<!--<div>-->
+<!--  <h2>USING NGFOR </h2>-->
+<!--  Track Name: <input type="text" [(ngModel)]="selectedTrack.trackName">-->
+<!--  Artist Name: <input type="text" [(ngModel)]="selectedTrack.artistName">-->
+<!--  Release Date: <input type="text" [(ngModel)]="selectedTrack.releaseDate">-->
+<!--  Genre: <input type="text" [(ngModel)]="selectedTrack.primaryGenreName">-->
+<!--</div>-->
+
+
+<div *ngIf="selectedTrack">
+  <h3>USING NGIF </h3>
+  Track Name: <input type="text" [(ngModel)]="selectedTrack.trackName">
+  Artist Name: <input type="text" [(ngModel)]="selectedTrack.artistName">
+  Release Date: <input type="text" [(ngModel)]="selectedTrack.releaseDate">
+  Genre: <input type="text" [(ngModel)]="selectedTrack.primaryGenreName">
+</div>
+
+
+<!--NGIF-->
+<!--<br/><br/>-->
+<!--  <button (click)="isClicked = !isClicked">Click Me to see me use an ngIf!</button>-->
+<!--<br/><br/>-->
+
+<!--  <div *ngIf="!isClicked; else elseBlock">-->
+<!--    <h2>You picked: {{selectedTrack.trackName}}</h2>-->
+<!--    <h2>Genre: <input [(ngModel)]="selectedTrack.primaryGenreName"></h2>-->
+<!--  </div>-->
+<!--  <ng-template #elseBlock>You unclicked me :(</ng-template>-->
+
+
+
+
+
