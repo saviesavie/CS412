@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {Music} from '../data/Music';
+import {SongService} from '../service/song.service';
 
 @Component({
   selector: 'app-form',
@@ -28,7 +29,7 @@ export class FormComponent implements OnInit {
   }
 
   getTracks(): void {
-    this.trackService.getSong(this.artistName).subscribe(
+    this.SongService.getSong(this.artistName).subscribe(
       (response: Music) => {
         this.selectedArtist = {
           artistName: this.artistName,
