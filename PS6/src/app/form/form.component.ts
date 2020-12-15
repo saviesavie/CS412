@@ -11,31 +11,30 @@ import {SongService} from '../service/song.service';
 export class FormComponent implements OnInit {
 
   constructor() { }
-
-  selectedArtist = {
-    artistName: '',
-    trackName: '',
-    primaryGenreName: '',
-    releaseDate: ''
-  };
   artistName: string;
   trackName: string;
   primaryGenreName: string;
   releaseDate: string;
 
   music: Music[] = [];
+  searchedArtist = {
+    artistName: '',
+    trackName: '',
+    primaryGenreName: '',
+    releaseDate: ''
+  };
 
   ngOnInit(): void {
   }
 
-  getTracks(): void {
+  getSongs(): void {
     this.SongService.getSong(this.artistName).subscribe(
       (response: Music) => {
-        this.selectedArtist = {
+        this.searchedArtist = {
           artistName: this.artistName,
-          trackName: response.trackName,
-          primaryGenreName: response.primaryGenreName,
-          releaseDate: response.releaseDate
+          trackName: this.trackName,
+          primaryGenreName: this.primaryGenreName,
+          releaseDate: this.releaseDate
         };
       }
     );
